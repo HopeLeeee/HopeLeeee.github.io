@@ -4,6 +4,35 @@
   
     
     <entry>
+      <title>第二章变量笔记</title>
+      <link href="/2022/01/25/di-er-zhang-bian-liang-bi-ji/"/>
+      <url>/2022/01/25/di-er-zhang-bian-liang-bi-ji/</url>
+      
+        <content type="html"><![CDATA[<p>1.message and print</p><pre><code>message=print(message)</code></pre><pre><code>print('message')</code></pre><p>2.制表符和换行符<br>制表符\t 前加空格<br>换行符\n 换行<br>通过使用制表符和换行符来实现单行代码输出多行和添加空格</p><pre><code>print('eg:\n\tone\n\ttwo')</code></pre><p>3.删除空格<br>左删.lstrip() l是left的缩写<br>右删.rstrip() r是right的缩写<br>全删.strip()</p><pre><code>message=' test 'print(message.strip())</code></pre><p>4.使用函数 str()避免类型错误【指示确认字符串】<br>str(变量)</p><pre><code>age = 23 message = "Happy " + str(age) + "rd Birthday!"  #str()如果换成age会出现错误，无法确认非字符串还是字符串print(message)</code></pre><p>5.修改字符串的大小写<br>首字母大写</p><pre><code>name=hope_leeprint(name.title())</code></pre><p>全部大写</p><pre><code>name=hope_leeprint(name.upper())</code></pre><p>全部小写</p><pre><code>name=hope_leeprint(name.lower())</code></pre><p>6.数学运算<br>加减乘除全部适用包括运算法则<br>2+3 3-2 2*3 4/2<br>次方运算是双乘号<br>3**2<br>小数(浮点数)运算会因为计算机本身的原因，结果包含的小数位数可能是不确定的。</p><blockquote><blockquote><blockquote><p>0.2+0.1<br>0.30000000000000004<br>所有语言都存在这种问题，解决办法是通过特定的指令忽略多余的小数位数。</p></blockquote></blockquote></blockquote><p>实验内容，测试三个引号能否实现代码块<br>‘’’print()’’’</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 笔记 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Python </tag>
+            
+            <tag> 记录(记录/理解) </tag>
+            
+            <tag> 原创 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Zen of Python转载记录</title>
       <link href="/2022/01/25/zen-of-python-zhuan-zai-ji-lu/"/>
       <url>/2022/01/25/zen-of-python-zhuan-zai-ji-lu/</url>
