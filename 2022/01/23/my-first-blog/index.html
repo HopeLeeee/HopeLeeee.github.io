@@ -705,15 +705,22 @@
   </div>
   
 
-  <!-- <script src="//cdn.jsdelivr.net/npm/@waline/client"></script> -->
+  <head>
+  ..
   <script src="//cdn.jsdelivr.net/npm/@waline/client"></script>
+  ...
+</head>
+<body>
+  ...
+  <div id="waline"></div>
   <script>
-    new Waline({
-        el: '#waline',
-        serverURL: 'https://blog-api-i2ve5h2qz-hopeleeee.vercel.app',
-        avatar: 'mm'    
+    Waline({
+      el: '#waline',
+      serverURL: 'https://blog-api-i2ve5h2qz-hopeleeee.vercel.app/',
     });
-  </script> 
+  </script>
+</body>
+
     
 
     

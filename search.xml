@@ -4,6 +4,35 @@
   
     
     <entry>
+      <title>记录Python选修课作业第一回</title>
+      <link href="/2022/03/07/ji-lu-python-xuan-xiu-ke-zuo-ye-di-yi-hui/"/>
+      <url>/2022/03/07/ji-lu-python-xuan-xiu-ke-zuo-ye-di-yi-hui/</url>
+      
+        <content type="html"><![CDATA[<h2 id="1-老师"><a href="#1-老师" class="headerlink" title="1.老师"></a>1.老师</h2><p>王若佳老师</p><p>个人主页 <a href="http://guanli.bucm.edu.cn/szdw/js2/65380.htm">王若佳_管理学院</a></p><h2 id="2-作业"><a href="#2-作业" class="headerlink" title="2.作业"></a>2.作业</h2><p>用turtle库画了个微软win11电池图标</p><p>叫他电池君。</p><p>绘制过程极为艰辛，一开始不知道撤销指令，一不小心绘制圆方向错误，就关掉IDLE重新写</p><p>后来百度查了一下，撤销指令是undo()</p><p>然后记录一下出现的错误和学习课程时的疑惑点</p><ul><li><p>{:.2f}是保留两位小数</p></li><li><p>开始填充是begin_fill(), 不要忘记括号</p></li></ul><p>然后是将电池君的身子寄托在这里。铭记。</p><pre><code>#电池君from turtle import *color('black')fd(100)left(90)fd(50)left(90)fd(80)pu()fd(20)left(90)fd(20)left(90)circle(20,90)circle(20,270)pd()circle(20,90)fd(5)left(90)fd(40)pu()left(90)pd()fd(5)circle(20,90)right(90)fd(30)undo()color('black','red')fd(30)left(90)fd(40)left(90)fd(50)left(90)fd(20)left(90)circle(-20,90)begin_fill()left(90)fd(30)left(40)left(50)fd(40)left(90)fd(50)left(90)fd(20)left(90)circle(-20,90)end_fill()pu()fd(10)right(90)fd(25)color('black', 'black')pd()fd(8)pu()right(90)fd(20)right(90)pd()fd(8)pu()fd(55)left(90)fd(90)left(90)fd(20)right(90)pd()fd(10)left(90)fd(10)left(90)fd(10)pu()</code></pre><p>电池君，替我看守这里，有一天我会给你做个拟人版画像，聘请到网站做管家，放在主页面当向导！！！</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 作业 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Python </tag>
+            
+            <tag> 记录/（记录，理解） </tag>
+            
+            <tag> Python选修课 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>第三章列表笔记</title>
       <link href="/2022/02/13/di-san-zhang-lie-biao-bi-ji/"/>
       <url>/2022/02/13/di-san-zhang-lie-biao-bi-ji/</url>
