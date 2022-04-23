@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>for循环符号相加的问题</title>
+      <link href="/2022/04/23/for-xun-huan-fu-hao-xiang-jia-de-wen-ti/"/>
+      <url>/2022/04/23/for-xun-huan-fu-hao-xiang-jia-de-wen-ti/</url>
+      
+        <content type="html"><![CDATA[<p>在写一个随机密码的程序时，for循环符号相加构成字符串出现了问题，尝试解决无果后，不得不换用另一个代表词。</p><span id="more"></span><p>具体的题目是：</p><p>由程序给出10个同时包含数字字母符号的10位密码。</p><p>问题有：</p><p>1.如何同时包含数字字母符号？</p><p>答：分别取值，再相加</p><p>2.如何控制字母数字符号的个数和为10？</p><p>答：利用while循环判断，否则重新取值。</p><p>3.如何控制三种字符的个数问题？</p><p>答：在分别取值的时候，利用random库，随机取数，定为该项的个数。</p><p>最开始的代码：</p><pre><code>from random import *seed(0x1010)word=['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z','a','b','c','d','e','f','g','h','i','g','q','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']number=['0','1','2','3','4','5','6','7','8','9']signal=['!','@','#','$','%','^','&amp;','*']#生成10个密码for i in range (0,11):    one=randint(1,8)#决定取多少字母    start=''    key=''    for j in range (0,one):        get1=choice(word)        start=start+get1    two=randint(1,8)#决定取多少数字    while one+two&gt;9:#判断是否超出长度限制        two=randint(1,8)    else:        for q in range (0,two):            get2=choice(number)            start=start+get2    three=10-one-two#决定取多少字符    for t in range (0,three):        start=start+choice(signal)&nbsp;&nbsp;&nbsp;&nbsp;key_m=list(start)&nbsp;&nbsp;&nbsp;&nbsp;shuffle(key_m)&nbsp;&nbsp;&nbsp;&nbsp;for k in key_m:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;key=key+k&nbsp;&nbsp;&nbsp;&nbsp;print(key)</code></pre><p>然后不知道为什么在取符号的那里出现了问题。</p><p>如果单开文件，取符号，是可以相加为字符串的。</p><p>但是在这个程序里，符号取完后不能按照和上面相同的处理方法依次加到前面的字母和数字组成的字符串里。</p><p>解决办法是：先单独相加，再和前者合并</p><p>对于符号相加组成的字符串，另外命名，然后加到前者上。</p><p>成功代码：</p><pre><code>from random import *seed(0x1010)word=['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z','a','b','c','d','e','f','g','h','i','g','q','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']number=['0','1','2','3','4','5','6','7','8','9']signal=['!','@','#','$','%','^','&amp;','*']#生成10个密码for i in range (0,11):    one=randint(1,8)#决定取多少字母    start=''    key=''    sig=''    for j in range (0,one):        get1=choice(word)        start=start+get1    two=randint(1,8)#决定取多少数字    while one+two&gt;9:#判断是否超出长度限制        two=randint(1,8)    else:        for q in range (0,two):            get2=choice(number)            start=start+get2    three=10-one-two#决定取多少字符    for t in range (0,three):        sig=sig+choice(signal)    key_w=start+sig    key_m=list(key_w)    shuffle(key_m)    for k in key_m:        key=key+k    print(key)</code></pre><p>不知道原因，但是好歹解决了，能跑起来就行。以后再找原因吧。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Python </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Python </tag>
+            
+            <tag> 记录 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>【写于清明节】关于未来</title>
       <link href="/2022/04/05/xie-yu-qing-ming-jie-guan-yu-wei-lai/"/>
       <url>/2022/04/05/xie-yu-qing-ming-jie-guan-yu-wei-lai/</url>
