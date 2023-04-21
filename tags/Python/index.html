@@ -2110,7 +2110,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     root: '/',
     debug: "env",
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1682082923093),
+    lastupdate: new Date(1682089715721),
     cdn: {
       izitoast_css: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/css/iziToast.min.css',
       izitoast_js: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/js/iziToast.min.js',
@@ -2873,57 +2873,28 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 
 
-      <script>
-  volantis.layoutHelper("comments",`<div id="artalk_container"><i class="fa-solid fa-cog fa-spin fa-fw fa-2x"></i></div>`);
-  function load_artalk() {
-    if(!document.querySelectorAll("#artalk_container")[0])return;
-    volantis.css("https://cdn.bootcdn.net/ajax/libs/artalk/2.5.3/Artalk.min.css");
-    
-    volantis.js("https://cdn.bootcdn.net/ajax/libs/artalk/2.5.3/Artalk.min.js").then(p_artalk);
-    
-  }
-
-  function p_artalk() {
-    if(!document.querySelectorAll("#artalk_container")[0])return;
+      <script type="text/javascript">
+  volantis.layoutHelper("comments",`<div id="gitalk-container"></div>`)
+  function p_gitalk() {
+    if(!document.querySelector("#gitalk-container"))return;
     let path = pdata.commentPath;
-    let placeholder = pdata.commentPlaceholder || "" || "";
     if (path.length == 0) {
-      path = 'https://hopeleeee.github.io/about/' || decodeURI(window.location.pathname);
+      let defaultPath = 'HopeLeeee.github.io/about/';
+      path = defaultPath || decodeURI(window.location.pathname);
     }
-    if(!':year/:month/:day/:title/'.includes('/index.html')) {
-      path = path.replaceAll('/index.html', '/').replaceAll('.html', '')
-    }
-
-    volantis.artalk = new Artalk(Object.assign({"AppID":"CJpIACXvGpJreWe1jjMME6Q2-MdYXbMMI","AppKey":"f2CKpcT2SYnhVv5VIitRktaG","path":"https://hopeleeee.github.io/about/","placeholder":null,"visitor":true,"latex":false,"imageUploader":{"api":null,"token":null,"resp":null}}, {
-      el: '#artalk_container',
-      pageKey: path,
-      pageTitle: document.title,
-      placeholder: placeholder,
-      site: 'hope&#39;s blog',
-      darkMode: volantis.dark.mode === "dark",
-      pvEl: '#artalk_visitors',
-
-      
-    }));
-
-    if (typeof VolantisFancyBox === "undefined"){
-      const checkFancyBox = setInterval(() => {
-        if(typeof VolantisFancyBox === "undefined") return;
-        clearInterval(checkFancyBox);
-        VolantisFancyBox.bind('.atk-content img:not([atk-emoticon])');
-      })
-    } else {
-      VolantisFancyBox.bind('.atk-content img:not([atk-emoticon])');
+    if (document.getElementById('gitalk-container') != null) {
+      var gitalk = new Gitalk(
+        Object.assign(
+          Object.assign({"clientID":"9cd21b5d25598d811f72","clientSecret":"24cb1bea3e25bd1553efc313629af14df17696e1","repo":"https://github.com/HopeLeeee/gitalkcomment","owner":"HopeLeeee","admin":["HopeLeeee"],"path":"HopeLeeee.github.io/about/"}, {
+            id: path,
+            distractionFreeMode: false  // Facebook-like distraction free mode
+          }),
+        pdata.commentConfig)
+      );
+      gitalk.render('gitalk-container');
     }
   }
-
-  load_artalk();
-
-  function dark_artalk() {
-    if(!document.querySelectorAll("#artalk_container")[0]) return;
-    volantis?.artalk?.setDarkMode(volantis.dark.mode === "dark")
-  }
-  volantis.dark.push(dark_artalk);
+  volantis.js('https://cdn.bootcdn.net/ajax/libs/gitalk/1.7.2/gitalk.min.js').then(p_gitalk)
 </script>
 
     
@@ -3196,6 +3167,18 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 
   <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"hope's blog","url":"http://hopeleeee.github.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Hope Lee","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://hopeleeee.github.io/","sameAs":["https://github.com/volantis-x"],"description":"记录生活和学习历程"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://hopeleeee.github.io/","name":"hope's blog"}},{"@type":"ListItem","position":2,"item":{"@id":"http://hopeleeee.github.io/tags/python/","name":"python"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"hope's blog","url":"http://hopeleeee.github.io/","keywords":"remember thoughts idea","description":"记录生活和学习历程","author":{"@type":"Person","name":"Hope Lee","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://hopeleeee.github.io/","description":"记录生活和学习历程"},"publisher":{"@type":"Organization","name":"hope's blog","url":"http://hopeleeee.github.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://hopeleeee.github.io?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","description":"记录生活和学习历程","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage"},"author":{"@type":"Person","name":"Hope Lee","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://hopeleeee.github.io/"},"publisher":{"@type":"Organization","name":"hope's blog","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"wordCount":0,"image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+
+
+
+    </div>
+    <!-- import body_end begin-->
+    <!-- import body_end end-->
+    <!-- Custom Files bodyEnd begin-->
+    
+    <!-- Custom Files bodyEnd end-->
+  </body>
+</html>
+学习历程"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://hopeleeee.github.io/","name":"hope's blog"}},{"@type":"ListItem","position":2,"item":{"@id":"http://hopeleeee.github.io/tags/Python/","name":"Python"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"hope's blog","url":"http://hopeleeee.github.io/","keywords":"remember thoughts idea","description":"记录生活和学习历程","author":{"@type":"Person","name":"Hope Lee","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://hopeleeee.github.io/","description":"记录生活和学习历程"},"publisher":{"@type":"Organization","name":"hope's blog","url":"http://hopeleeee.github.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://hopeleeee.github.io?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","description":"记录生活和学习历程","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage"},"author":{"@type":"Person","name":"Hope Lee","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://hopeleeee.github.io/"},"publisher":{"@type":"Organization","name":"hope's blog","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"wordCount":0,"image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 
